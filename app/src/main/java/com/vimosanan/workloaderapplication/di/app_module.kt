@@ -2,7 +2,7 @@ package com.vimosanan.workloaderapplication.di
 
 import com.vimosanan.workloaderapplication.app.Constants
 import com.vimosanan.workloaderapplication.network.ApiInterface
-import com.vimosanan.workloaderapplication.ui.DashboardViewModel
+import com.vimosanan.workloaderapplication.ui.dashboard.DashboardViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -12,7 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 var appModule =  module {
 
     viewModel {
-        DashboardViewModel()
+        DashboardViewModel(
+            get(
+                named("apiInterface")
+            )
+        )
     }
 
     factory(named("apiInterface")) {

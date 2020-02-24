@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DashboardActivity">
+    tools:context=".ui.dashboard.DashboardActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,21 +22,43 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="@string/txt_lbl_app_title"
+                android:textColor="@color/colorGrayDark"
+                android:textSize="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/txtPositionTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/colorGray"
+                android:textSize="32dp"
                 app:layout_constraintEnd_toStartOf="@+id/txtSalaryAmount"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:text="Barista" />
 
             <TextView
                 android:id="@+id/txtSalaryAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="18dp"
                 android:layout_marginEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/txtPositionTitle"
@@ -45,6 +68,9 @@
                 android:id="@+id/txtClientName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="@color/colorGray"
+                android:fontFamily="@font/opensans_semibold"
                 app:layout_constraintEnd_toEndOf="@+id/txtPositionTitle"
                 app:layout_constraintStart_toStartOf="@+id/txtPositionTitle"
                 app:layout_constraintTop_toBottomOf="@+id/txtPositionTitle"
@@ -54,7 +80,12 @@
                 android:id="@+id/txtType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/colorGray"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="@+id/txtSalaryAmount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/txtSalaryAmount"
                 app:layout_constraintTop_toBottomOf="@+id/txtSalaryAmount"
                 tools:text="per Day" />
 
@@ -62,15 +93,18 @@
                 android:id="@+id/imageView"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="96dp"
+                android:layout_marginTop="32dp"
                 app:layout_constraintStart_toStartOf="@+id/txtClientName"
                 app:layout_constraintTop_toBottomOf="@+id/txtClientName"
-                tools:src="@tools:sample/avatars" />
+                android:src="@drawable/location"/>
 
             <TextView
                 android:id="@+id/txtAddress"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,14 +119,17 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/txtAddress"
-                tools:src="@tools:sample/avatars" />
+                android:src="@drawable/manager" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Location Manager"
+                android:text="@string/txt_lbl_locationManager"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="@+id/imageView2" />
@@ -101,6 +138,9 @@
                 android:id="@+id/txtManagerName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 android:layout_marginStart="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/txtAddress"
                 app:layout_constraintStart_toStartOf="@+id/guidelineV50"
@@ -114,14 +154,17 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                tools:src="@tools:sample/avatars" />
+                android:src="@drawable/contact" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Contact Number"
+                android:text="@string/txt_lbl_contactNumber"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/imageView3"/>
@@ -131,6 +174,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toEndOf="@+id/txtManagerName"
                 app:layout_constraintStart_toStartOf="@+id/guidelineV50"
                 app:layout_constraintTop_toTopOf="@+id/textView4"
@@ -140,7 +186,10 @@
                 android:id="@+id/textView6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Clock In"
+                android:text="@string/txt_lbl_clockedIn"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="15dp"
@@ -153,6 +202,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="32dp"
+                android:text="@string/txt_lbl_dash"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toEndOf="@+id/textView6"
                 app:layout_constraintStart_toStartOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/textView6"
@@ -164,7 +216,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="Clock In"
+                android:text="@string/txt_lbl_clockedOut"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guidelineV50"
                 app:layout_constraintTop_toTopOf="@+id/textView6"/>
@@ -174,6 +229,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="32dp"
+                android:text="@string/txt_lbl_dash"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/colorGray"
                 app:layout_constraintEnd_toEndOf="@+id/textView7"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -186,12 +244,16 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
-            <ImageButton
-                android:id="@+id/imgBtnClockInOut"
-                android:layout_width="92dp"
-                android:layout_height="93dp"
+            <Button
+                android:id="@+id/btnClockInOut"
+                android:layout_width="0dp"
+                android:layout_height="92dp"
                 android:layout_marginTop="64dp"
-                android:src="@android:drawable/ic_input_add"
+                android:background="@drawable/button_round_background"
+                android:padding="10dp"
+                android:text="@string/txt_lbl_clockedIn"
+                android:textAllCaps="false"
+                app:layout_constraintDimensionRatio="w,1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
                 app:layout_constraintStart_toStartOf="@+id/guidelineV50"
                 app:layout_constraintTop_toBottomOf="@+id/txtClockOutTime" />

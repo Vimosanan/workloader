@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">WorkLoaderApplication</string>
+
+    <string name="txt_lbl_cancel_title"><u>Cancel</u></string>
+    <string name="txt_lbl_locationManager">Location Manager</string>
+    <string name="txt_lbl_contactNumber">Contact Number</string>
+    <string name="txt_lbl_clockedIn">Clocked In</string>
+    <string name="txt_lbl_clockedOut">Clocked Out</string>
+    <string name="txt_lbl_app_title">Work Load Manager</string>
+    <string name="txt_lbl_dash">-</string>
 </resources>
