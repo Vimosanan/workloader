@@ -80,7 +80,7 @@ class DashboardViewModel(private var api: ApiInterface, private var sharedPrefer
         }
     }
 
-    private fun getDisplayDateString(str: String): String{
+    fun getDisplayDateString(str: String): String{
         val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US)
         format.timeZone = TimeZone.getTimeZone("UTC")
         val dateObj = format.parse(str)!!

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.vimosanan.workloaderapplication.R
@@ -55,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Status.ERROR -> {
                     btnLogin.isEnabled = true
+                    progressBar.visibility = View.GONE
                     it.msg?.let { msg ->
                         showSnackBar(msg)
                     }
@@ -64,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showSnackBar(str: String){
-        Snackbar.make(constraintLayout, str, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(constraintLoginMain, str, Snackbar.LENGTH_LONG).show()
     }
 
     private fun startDashboard(){

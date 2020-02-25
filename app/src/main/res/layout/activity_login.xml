@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLoginMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,7 +44,6 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="64dp"
             android:layout_marginEnd="30dp"
-            android:text="+6281313272005"
             android:maxLines="1"
             android:background="@drawable/editext_background_white"
             android:fontFamily="@font/opensans_regular"
@@ -58,7 +59,6 @@
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
             android:inputType="textPassword"
-            android:text="alexander"
             android:maxLines="1"
             android:background="@drawable/editext_background_white"
             android:fontFamily="@font/opensans_regular"

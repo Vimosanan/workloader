@@ -1,7 +1,6 @@
 package com.vimosanan.workloaderapplication.ui.login
 
 import android.content.SharedPreferences
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.vimosanan.workloaderapplication.app.Constants
