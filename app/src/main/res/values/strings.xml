@@ -6,6 +6,13 @@
     <string name="txt_lbl_contactNumber">Contact Number</string>
     <string name="txt_lbl_clockedIn">Clocked In</string>
     <string name="txt_lbl_clockedOut">Clocked Out</string>
+    <string name="txt_lbl_clockIn">Clock In</string>
+    <string name="txt_lbl_clockOut">Clock Out</string>
     <string name="txt_lbl_app_title">Work Load Manager</string>
     <string name="txt_lbl_dash">-</string>
+
+
+    <string name="btn_lbl_login">Login</string>
+    <string name="edtTxt_hint_username">Username</string>
+    <string name="edtTxt_hint_password">Password</string>
 </resources>

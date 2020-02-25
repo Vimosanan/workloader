@@ -19,7 +19,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/textView"
@@ -89,113 +89,172 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtSalaryAmount"
                 tools:text="per Day" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintStart_toStartOf="@+id/txtClientName"
-                app:layout_constraintTop_toBottomOf="@+id/txtClientName"
-                android:src="@drawable/location"/>
-
-            <TextView
-                android:id="@+id/txtAddress"
-                android:layout_width="0dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView"
-                tools:text="888 6-7 Thanon Ekkamai, Khwaeng Phra Khanong Nuea, Khet Watthana, Krung Thep Maha Nakhon 10110, Thailand" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress"
-                android:src="@drawable/manager" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/txt_lbl_locationManager"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-            <TextView
-                android:id="@+id/txtManagerName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/txtAddress"
-                app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-                app:layout_constraintTop_toTopOf="@+id/textView3"
-                tools:text="Yai Thong-oon" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                android:src="@drawable/contact" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtClientName">
 
-            <TextView
-                android:id="@+id/textView4"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="888 6-7 Thanon Ekkamai, Khwaeng Phra Khanong Nuea, Khet Watthana, Krung Thep Maha Nakhon 10110, Thailand" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/txt_lbl_contactNumber"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/imageView3"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-            <TextView
-                android:id="@+id/txtContactNumber"
-                android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/manager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="@string/txt_lbl_locationManager"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2V50"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/txtManagerName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2V50"
+                    app:layout_constraintTop_toTopOf="@+id/textView3"
+                    tools:text="Yai Thong-oon" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2V50"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
-                app:layout_constraintEnd_toEndOf="@+id/txtManagerName"
-                app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-                app:layout_constraintTop_toTopOf="@+id/textView4"
-                tools:text="Yai Thong-oon" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/contact"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="@string/txt_lbl_contactNumber"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineV350"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+                <TextView
+                    android:id="@+id/txtContactNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textColor="@color/colorGray"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineV350"
+                    app:layout_constraintTop_toTopOf="@+id/textView4"
+                    tools:text="Yai Thong-oon" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineV350"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_lbl_clockedIn"
-                android:textSize="14dp"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/colorGray"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="15dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/txt_lbl_clockedIn"
+                android:textColor="@color/colorGray"
+                android:textSize="14dp"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 
             <TextView
                 android:id="@+id/txtClockInTime"
@@ -244,19 +303,35 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
+            <ProgressBar
+                android:id="@+id/progressBarDashBoard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/btnClockInOut"
+                app:layout_constraintEnd_toEndOf="@+id/btnClockInOut"
+                app:layout_constraintStart_toStartOf="@+id/btnClockInOut"
+                app:layout_constraintTop_toTopOf="@+id/btnClockInOut"
+                tools:visibility="visible"/>
+
             <Button
                 android:id="@+id/btnClockInOut"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:layout_marginTop="64dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/button_round_background"
                 android:padding="10dp"
-                android:text="@string/txt_lbl_clockedIn"
+                android:text="@string/txt_lbl_clockIn"
                 android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="w,1:1"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
                 app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-                app:layout_constraintTop_toBottomOf="@+id/txtClockOutTime" />
+                app:layout_constraintTop_toBottomOf="@+id/txtClockOutTime"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

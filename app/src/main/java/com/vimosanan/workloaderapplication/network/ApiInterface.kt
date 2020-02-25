@@ -1,9 +1,11 @@
 package com.vimosanan.workloaderapplication.network
 
+import com.vimosanan.workloaderapplication.model.AccessToken
 import com.vimosanan.workloaderapplication.model.Account
+import com.vimosanan.workloaderapplication.model.ClockInOutObj
+import com.vimosanan.workloaderapplication.model.TimeSheet
 import retrofit2.Response
 import retrofit2.http.*
-import java.util.*
 
 interface ApiInterface {
 
@@ -13,10 +15,10 @@ interface ApiInterface {
      * @return
      */
     @FormUrlEncoded
-    @POST("/")
-    fun getAccessToker(
+    @POST("v1/auth/login/")
+    suspend fun getAccessToken(
             @Field("username") userName: String,
-            @Field("password") password: String): Response<String>
+            @Field("password") password: String): Response<AccessToken>
 
     /**
      * @param accessToken
@@ -38,7 +40,7 @@ interface ApiInterface {
     suspend fun clockIn(
             @Header("Authorization") accessToken: String,
             @Field("latitude") latitude: Double,
-            @Field("longitude") longitude: Double): Response<Object>
+            @Field("longitude") longitude: Double): Response<ClockInOutObj>
 
 
     /**
@@ -52,5 +54,5 @@ interface ApiInterface {
     suspend fun clockOut(
             @Header("Authorization") accessToken: String,
             @Field("latitude") latitude: Double,
-            @Field("longitude") longitude: Double): Response<Object>
+            @Field("longitude") longitude: Double): Response<TimeSheet>
 }

@@ -13,6 +13,7 @@ import com.vimosanan.workloaderapplication.model.Account
 import com.vimosanan.workloaderapplication.ui.progress.ShowProgressActivity
 import com.vimosanan.workloaderapplication.util.Status
 import kotlinx.android.synthetic.main.activity_activity.*
+import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -30,8 +31,13 @@ class DashboardActivity : AppCompatActivity() {
 
         dashboardViewModel.loadData().observe(this, Observer {
             when(it.status) {
+                Status.LOADING -> {
+                    progressBarDashBoard.visibility = View.VISIBLE
+                }
 
                 Status.SUCCESS -> {
+                    progressBarDashBoard.visibility = View.GONE
+
                     it.data?.let {response ->
                         if (response.isSuccessful){ //if response is success: 200
                             updateDashboardUI(response.body())
@@ -45,6 +51,18 @@ class DashboardActivity : AppCompatActivity() {
             startProgressActivity()
 
         }
+
+        dashboardViewModel.clockInTime.observe(this, Observer {
+            if(it != null){
+                txtClockInTime.text = it
+            }
+        })
+
+        dashboardViewModel.clockOutTime.observe(this, Observer {
+            if(it != null){
+                txtClockOutTime.text = it
+            }
+        })
     }
 
 
@@ -94,15 +112,26 @@ class DashboardActivity : AppCompatActivity() {
     private fun clockIn(){
         dashboardViewModel.clockIn().observe(this, Observer {
             when(it.status){
+                Status.LOADING -> {
+                    progressBarDashBoard.visibility = View.VISIBLE
+                }
+
                 Status.SUCCESS -> {
+                    progressBarDashBoard.visibility = View.GONE
+
                     if(it.statusCode == 201) {
                         isCLockedIn = true
-                        txtClockInTime.text = "08:00AM"
-                        btnClockInOut.text = resources.getString(R.string.txt_lbl_clockedOut)
+                        btnClockInOut.text = resources.getString(R.string.txt_lbl_clockOut)
                     } else if(it.statusCode == 400){
                         //already clocked in
-                        showSnackBar("Already Clock In")
+                        showSnackBar("Already Clocked In, Click again to Clock Out first!")
+                        isCLockedIn = true
+                        btnClockInOut.text = resources.getString(R.string.txt_lbl_clockOut)
                     }
+                }
+
+                Status.ERROR -> {
+                    showSnackBar("Something went wrong while connecting to remote!")
                 }
             }
         })
@@ -111,15 +140,24 @@ class DashboardActivity : AppCompatActivity() {
     private fun clockOut(){
         dashboardViewModel.clockOut().observe(this, Observer {
             when(it.status){
+                Status.LOADING -> {
+                    progressBarDashBoard.visibility = View.VISIBLE
+                }
+
                 Status.SUCCESS -> {
+                    progressBarDashBoard.visibility = View.GONE
+
                     if(it.statusCode == 201) {
                         isClockedOut = true
-                        txtClockOutTime.text = "12:00AM"
                         btnClockInOut.visibility = View.GONE
                     } else if(it.statusCode == 400){
                         //already clocked out
                         showSnackBar("Clock In first!")
                     }
+                }
+
+                Status.ERROR -> {
+                    showSnackBar("Something went wrong while connecting to remote!")
                 }
             }
         })
