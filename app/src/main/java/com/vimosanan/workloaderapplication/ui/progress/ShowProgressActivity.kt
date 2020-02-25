@@ -20,7 +20,7 @@ class ShowProgressActivity: AppCompatActivity() {
         isClockedIn = intent.getBooleanExtra(Constants.IS_CLOCKED_IN, false)
 
         setButtonText()
-        showProgressBar(3000, 1)
+        showProgressBar(10_000, 10)
 
         txtCancel.setOnClickListener {
             setResult(Activity.RESULT_CANCELED, Intent())
@@ -45,9 +45,9 @@ class ShowProgressActivity: AppCompatActivity() {
 
     private fun setButtonText(){
         if(!isClockedIn){
-            txtClockInOut.text = "Clocking In ..."
+            txtClockInOut.text = resources.getString(R.string.txt_lbl_clockIn)
         } else {
-            txtClockInOut.text = "Clocking Out ..."
+            txtClockInOut.text = resources.getString(R.string.txt_lbl_clockedOut)
         }
     }
 }

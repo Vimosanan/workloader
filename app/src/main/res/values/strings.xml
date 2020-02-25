@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">WorkLoaderApplication</string>
 
     <string name="txt_lbl_cancel_title"><u>Cancel</u></string>
@@ -15,4 +15,10 @@
     <string name="btn_lbl_login">Login</string>
     <string name="edtTxt_hint_username">Username</string>
     <string name="edtTxt_hint_password">Password</string>
+
+
+    <string name="txt_lbl_clocking_in" tools:ignore="TypographyEllipsis">Clocking In ...</string>
+    <string name="txt_lbl_clocking_out" tools:ignore="TypographyEllipsis">Clocking Out ...</string>
+
+
 </resources>
